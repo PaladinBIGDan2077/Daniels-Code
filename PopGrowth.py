@@ -3,18 +3,21 @@ Developed specifically for Programming Project #1
 Under Supervision of Professor David Lin
 Northern Virginia Community College - Annandale Campus
 Introduction to Engineering Methods (EGR125)
-Completed 3/27/2021 at 12:29AM EST
+Completed 3/29/2021 at 5:06PM EST
 
 Description:
 For my first ever project, I was required to write a program which calculates the approximate human population
 for every ten years since 10,000 BCE until 2100 AD. Using the logistic population equation, my program calculates the
 population based on six different growth rate values: 0.07%, 0.08%, 0.09%, 0.10%, 0.11%, and 0.12%. In addition to
-growth rate, it also had to calculate for  three different limiting populations (8,000,000,000, 10,900,000,000, 
+growth rate, it also had to calculate for three different limiting populations (8,000,000,000, 10,900,000,000, 
 and 12,000,000,000), yielding 18 separate data sets. After the data is successfully processed, each of the 18 population
 data sets are placed on a three graphs, each separated by the limiting population. This is saved as a jpeg within the present
-working directory of the python interpreter. Lastly, I was required to locate a specific combination of the limiting population
-and growth rate that approximates the 2020 world population (~7,800,000,000). I assume that the closest value will yield
-the best represented growth rate based on the recommend population limit.
+working directory of the python interpreter. Lastly, I was required to print the value of the total population for each specific 
+combination of the limiting population and growth rate that yields its 2020 world population. Along with the value, it also
+prints how far off the combination was compared to the known 2020 world population of ~7,800,000,000. The smaller the value the
+closer the combination aligns to the real world approximate growth rate and limiting population at 2100 AD. Despite this,
+I would take these combinations with a grain of salt since the closest value does not align remotely close to the respected
+values of historians' estimations.
 
 Overall, what I have here is nice. I am proud of the technique I used to generate the 18 data sets. Its a clever use
 of FOR loops, the first represents the changing growth rates, the second represents the changing population limits, and the
@@ -23,7 +26,7 @@ the population set is calculated, it is appended to a list as an element. By the
 All of it condensed into on list: population. While some parts definitely can be streamlined, I am satisfied with what I have created.
 This programs marks the first use of a program stopwatch. While it is unimportant for the goal, I find it useful in determining how long the program takes to complete the process.
 
-The Population Modeler - v2.1 for Python 3.9.1 -- Written by Daniel J. Lomis
+The Population Modeler - v2.2 for Python 3.9.1 -- Written by Daniel J. Lomis
 This program is protected under the GNU General Public License GPL v3.0.
 """
 from time import time_ns
@@ -32,7 +35,7 @@ stopwatch_start = time_ns()
 import numpy as np
 import matplotlib.pyplot as plot
 from math import exp
-print("\nWelcome to The Population Modeler - v2.1!")
+print("\nWelcome to The Population Modeler - v2.2!")
 print("Written by Daniel J. Lomis\n")
 print("Processing...\n")
 # Assuming 4 million for the initial population
@@ -65,7 +68,7 @@ for j in range(0, 6):
             pop_denominator = (K+Po*((exp(x))-1))
             pop_divided = pop_numerator/pop_denominator
             pop_list.append(pop_divided)
-        # Each combination of limiting population and growth rate is appended as an element to the population list, which evolves into a 18D array with 1,210 values in each demension
+        # Each combination of limiting population and growth rate is appended as an element to the population list, which evolves into a 18D array with 1,210 values in each dimension
         population.insert(pop_index, pop_list)
         pop_list = []
         pop_index = pop_index + 1
@@ -134,20 +137,13 @@ print("Charts have been saved to the present working directory: 8-Billion.jpeg, 
 # Locating the correct combination of population limit and growth rate that best aligns with the 2020 world population
 y_list_2020 = [y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17]
 list = []
+crossref = []
 for i in range(0, 18):
     yi = y_list_2020[i]
     y = yi[1202]
     list.append(y)
-estimate = []
-crossref = []
-for i in range(0, 18):
-    test = list[i]
-    if (7800000000*0.999 <= test <= 7800000000*1.111):
-        estimate.append(test)
-        crossref.append(i)
-    else:
-        continue
-print("The following models have reported populations that are equivalent to the current population of about 7,800,000,000 (±0.1% error)...\n")    
+    crossref.append(i)
+print("The following models have reported their respective population totals at 2020 AD...\n")    
 for i in range(0, len(crossref)):
     if (crossref[i] == 0):
             pop = "8 Billion"
@@ -203,9 +199,12 @@ for i in range(0, len(crossref)):
     elif (crossref[i] == 17):
             pop = "12 Billion"
             rate = "0.12%"
-    print("This Population Growth Model, with a(n)", pop,"person limit and a growth rate of",rate,", produced an approximate estimation of %.1f" %estimate[i])
+    final = abs(list[i] - 7800000000)
+    print("This Population Growth Model, with a(n)", pop,"person limit and a growth rate of",rate,", produced an approximate population of %.1i" %list[i])
+    print("This is off from the current world population (~7,800,000,000) by %0.1i" %final)
+    print()
 print()
-stopwatch_end = (time_ns()) - stopwatch_start
+stopwatch_end = ((time_ns()) - stopwatch_start)
 print("Process completed in", stopwatch_end,"nanoseconds!\n")
 print("END OF LINE.")
 "END OF FILE"
