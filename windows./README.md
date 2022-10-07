@@ -1,5 +1,3 @@
-# Daniel's Code
+# Windows Test
 
-Welcome Everyone! My name is Daniel J. Lomis. I am currently a student at Northern Virginia Community College.
-I will be uploading the RAW code for all of my programs that I will write at school. I will upload older projects
-as well. I will strive to keep everything under the GNU General Public License v3.0.
+We shall see what Windows does when this folder is cloned. (Windows hates spaces and periods at the end of files/folders)
