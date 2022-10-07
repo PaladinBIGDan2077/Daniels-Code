@@ -1,7 +1,7 @@
 #       ****************************************************************************
 #       *  PWM Motor Controller Program for Cytron MDD10A 10Amp Motor Driver pHat  *
 #       *--------------------------------------------------------------------------*
-#       *     Written in Python v3.7.3 under Thonny IDE by Daniel Justin Lomis     *
+#       *      Written in Python v3.7.3 with Thonny IDE by Daniel Justin Lomis     *
 #       *                Tysons Corner, Virginia - October 27, 2020                *
 #       *                 Republished to GitHub on October 6, 2022                 *
 #       *--------------------------------------------------------------------------*
@@ -11,7 +11,7 @@
 #       *       Developed specifically for the Box-Mover Engineering Project       *
 #       *               Under Supervision of Dr. Mohamed H. Belghith               *
 #       *           Northern Virginia Community College - Loudoun Campus           *
-#       *      Foundations of Engineering: Engineering Fundatmentals (EGR121)      *
+#       *       Foundations of Engineering: Engineering Fundamentals (EGR121)      *
 #       *--------------------------------------------------------------------------*
 #       *    This program is protected under the GNU General Public License v3.0   *
 #       ****************************************************************************
@@ -30,7 +30,7 @@ GPIO.setwarnings(False)
 GPIO.setup(DIR,GPIO.OUT)
 GPIO.setup(MOT,GPIO.OUT)
 p = GPIO.PWM(MOT,100)
-# GPIO default congifuration
+# GPIO default configuration
 GPIO.output(DIR,GPIO.LOW)
 GPIO.output(DIR,GPIO.HIGH)
 # Motor anti-seize startup subroutine
@@ -63,7 +63,7 @@ os.system('sudo aplay -q /home/pi/PS3Bp.wav') # Used as a substitution of the te
 input("PRESS THE 'ENTER' KEY TO CONTINUE.")
 os.system('clear')
 while(1):
-    # Continued title from beginning, but now accounting for persistance
+    # Continued title from beginning, but now accounting for persistence
     print("____________________________________________________________________")
     print("             Box-Mover Management System (BMMS) -  v1.1             ")
     print("             Built on Pulse-width Modulation technology             ")
@@ -79,15 +79,15 @@ while(1):
         print("Selected: Run") # print's indicated text to screen
         sleep(0.25) # pause for 1/2 second
         p.start(50) # Using PWM, indicates 25/100 cycles on the MOTor pin
-       	print()
+        print()
         os.system('sudo aplay -q /home/pi/PS3Bp.wav')
         print("Signaled Run") # print indicated text along with a terminal bell
         sleep(1)
 
-    elif x=='-': # if '*' was not pressed, then it continues down the list until the correct character is located, otherwise it returns with an unknown command and starts again at ln 48 by requesting input from control pad
+    elif x=='-': # if '*' was not pressed, then it continues down the list until the correct character is located, otherwise it returns with an unknown command and starts again at line 48 by requesting input from control pad
         print("Selected: Forward")
         sleep(0.25)
-        GPIO.output(DIR,GPIO.HIGH) # Using PWM, indicates CW-roation on the DIRection pin
+        GPIO.output(DIR,GPIO.HIGH) # Using PWM, indicates CW-rotation on the DIRection pin
         print()
         os.system('sudo aplay -q /home/pi/PS3Bp.wav')
         print("Signaled Forward")
@@ -96,7 +96,7 @@ while(1):
     elif x=='+':
         print("Selected: Reverse")
         sleep(0.25)
-        GPIO.output(DIR,GPIO.LOW) # Using PWM, indicates CCW-roation on the DIRection pin
+        GPIO.output(DIR,GPIO.LOW) # Using PWM, indicates CCW-rotation on the DIRection pin
         print()
         os.system('sudo aplay -q /home/pi/PS3Bp.wav')
         print("Signaled Reverse")
@@ -245,12 +245,12 @@ while(1):
 
     elif x=='=':
         os.system('clear') # Coming out of the Python Shell, tells command line to clear screen
-        print("Signalling Full Stop...")
+        print("Signaling Full Stop...")
         sleep(3)
         p.ChangeDutyCycle(0)
         print()
         os.system('sudo aplay -q /home/pi/PS3TBp.wav')
-        print("Signalled Full Stop")
+        print("Signaled Full Stop")
         sleep(2)
         os.system('clear')
         print("Performing GPIO Clean up...")
@@ -290,5 +290,6 @@ while(1):
     else:
         p.start(0)
         os.system('sudo aplay -q /home/pi/PS3TBp.wav')
-        print("Input not recognized. Signalled emergency STOP.")
+        print("Input not recognized. Signaled emergency STOP.")
         sleep(1)
+        
