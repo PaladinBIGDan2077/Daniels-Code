@@ -1,5 +1,4 @@
 # Daniel's BIGRepo
-
 Welcome everyone! My name is Daniel. I am currently a student at Northern Virginia Community College, Annandale Campus.
 I will occasionally upload my programs here. These will vary widely in genre and language, as some will be assignments from courses. Feel free to download, copy, and try some out for yourself! 
 
