@@ -26,15 +26,14 @@
 ;   |LABEL      |MNEMONIC   |OPERAND    |COMMENTS
                 .ORG        $FF01       ;   Sets the CPU's program counter to FF00. Programming will be entered from memory address 0xFF00 onward.
     REGVAR      .EQU        $0001       ;   Global variable, indicates which register to write the memory pattern with
-                MVI         B,0055h	    ;   Writes the value 0x55 [01010101, base-2] to register B
-	            MVI         C,00AAh     ;   Writes the value 0xAA [10101010, base-2] to register C
-	            MVI         D,0000h     ;   Writes the value 0x00 [00000000, base-2] to register D
-	            MVI         E,00FFh     ;   Writes the value 0xFF [11111111, base-2] to register E
-	            LDA         FF00h       ;   Writes the value contained at at memory address 0xFF00 to register A, designed for custom bit writing
-	            LXI         H,0000h     ;   Writes the value 0x0000 [0000000000000000, base-2] to register pair HL    
-	            MOV         M,          ;   
-	            INR         M,1         ;   Increment the H-L register by 1, forcing the pair to point at the adjacent memory address
-	            JMP         0010h       ;   Jumps the program counter to memory address 0x0010.
+                MVI         B,0x0011	;   Writes the value 0x0055 [01010101, base-2] to register B
+	            MVI         C,0x00AA	;   Writes the value 0x00AA [10101010, base-2] to register C
+	            MVI         D,0x0000	;   Writes the value 0x0000 [00000000, base-2] to register D
+	            MVI         E,0x00FF	;   Writes the value 0x00FF [11111111, base-2] to register E
+	            LDA         0xFF00		;   Writes the value contained at at memory address 0xFF00 to register A, designed for custom bit writing
+	            LXI         H,0x0000	;   Writes the value 0x0000 [0000000000000000, base-2] to register pair HL    
+	            INR         M			;   Increment the H-L register by 1, forcing the pair to point at the adjacent memory address
+	            JMP         0x0010		;   Jumps the program counter to memory address 0x0010.
 	            .ORG        $0040       ;   Sets the CPU's program counter to 40. Programming will be entered from memory address 0x0040 onward.
 
 	            HLT                     ;   Halt the CPU
