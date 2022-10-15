@@ -4,17 +4,17 @@
 ;   Date Written: October 13, 2022
 ;   Company: The Lomis Company of Virginia, Research and Development 
 ;
-;   Date Sucessfully Compiled:
+;   Date Successfully Compiled:
 ;
 ;   Programming Language: Assembly
-;   Intruction Code Language: ASM80
+;   Instruction Code Language: ASM80
 ;   System Architecture: Intel 8080
 ;
 ;   Target Computer: Altair 8800
 ;
 ;   Description:  A memory eraser program. It essentially clears the entire system of 
 ;                 memory. It will perform either one or all of the erasures, as defined, 
-;                 upto 16 times. Supports writing zeros, ones, alternating zeros and ones, 
+;                 up to 16 times. Supports writing zeros, ones, alternating zeros and ones, 
 ;                 alternating ones and zeros, and custom value. 
 ;
 ;
@@ -37,4 +37,4 @@
 	            .ORG        $0040       ;   Sets the CPU's program counter to 40. Programming will be entered from memory address 0x0040 onward.
 
 	            HLT                     ;   Halt the CPU
-	            .END                    ;   End of Assembly Intruction
+	            .END                    ;   End of Assembly Instruction

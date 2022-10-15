@@ -5,7 +5,7 @@
 ;   Location: McLean, Virginia
 ;   Company: The Lomis Company of Virginia, R&D
 ;
-;   Date Sucessfully Compiled on the Altair: 10/15/2022
+;   Date Successfully Compiled on the Altair: 10/15/2022
 ;
 ;   Programming Language: Assembly
 ;   Intruction Code Language: ASM80
