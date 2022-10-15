@@ -1,0 +1,13 @@
+ 00FF                 ORG 00FFH
+ 01FF =         REGV: EQU 01FFH
+ 00FF 0611            MVI B,0011H
+ 0101 0EAA            MVI C,00AAH
+ 0103 1600            MVI D,0000H
+ 0105 1EFF            MVI E,00FFH
+ 0107 3A009F          LDA 9F00H
+ 010A 21FE0F          LXI H,0FFEH
+ 010D 34              INR M
+ 010E C31000          JMP 0010H
+ 0040                 ORG 0040H
+ 0040 76              HLT
+ 0041                 END 00FFH
