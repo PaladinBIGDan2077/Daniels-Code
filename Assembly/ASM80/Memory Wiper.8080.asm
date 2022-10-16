@@ -5,7 +5,7 @@
 ;   Location: McLean, Virginia
 ;   Company: The Lomis Company of Virginia, R&D
 ;
-;   Last Date Successfully Compiled: 10/16/20222
+;   Last Successful Compile: 10/16/20222
 ;
 ;   Programming Language: Assembly
 ;   Instruction Code Language: ASM80
