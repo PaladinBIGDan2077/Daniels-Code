@@ -30,8 +30,8 @@
 ;   OUT-C:      EQU         000000Q         | OUTPUT C - Result from Register A is outputted
 ;    IN-A:      EQU         000001Q         | INPUT A - First word (binary/decimal)
 ;    IN-B:      EQU         000002Q         | INPUT B - Second word (binary/decimal)
-                ORG         000007Q         ; Sets 8080's Program Counter to 0o000010
-                JMP         000021Q         ; Jump to Halt
+                ORG         000005Q         ; Sets 8080's Program Counter to 0o000010
+                JMP         000022Q         ; Jump to Halt
                 LHLD        000001Q         ; Writes value at Address 0o000001 to Reg. L
                 LDA         000002Q         ; Writes value at Address 0o000002 to Reg. A
                 ADD         L               ; Adds Reg. A and L, answer placed into Reg. A

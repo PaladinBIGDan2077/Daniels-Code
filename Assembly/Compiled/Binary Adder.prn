@@ -1,13 +1,13 @@
 
 
-                ;
+                ;                                                                                                       
                 ;   Title: Simple 8-Bit Binary Adder
                 ;   Developer: Daniel J. Lomis
                 ;   Date Written: October 15, 2022
                 ;   Location: McLean, Virginia
                 ;   Company: The Lomis Company of Virginia, R&D
                 ;
-                ;   Last Date Successfully Compiled: 10/16/20222
+                ;   Last Successful Compile: 3:24PM 10/16/20222
                 ;
                 ;   Programming Language: Assembly
                 ;   Instruction Code Language: ASM80
@@ -32,11 +32,11 @@
                 ;   OUT-C:      EQU         000000Q         | OUTPUT C - Result from Register A is outputted
                 ;    IN-A:      EQU         000001Q         | INPUT A - First word (binary/decimal)
                 ;    IN-B:      EQU         000002Q         | INPUT B - Second word (binary/decimal)
- 0007                           ORG         000007Q         ; Sets 8080's Program Counter to 0o000010
- 0007 C31100                    JMP         000021Q         ; Jump to Halt
- 000A 2A0100                    LHLD        000001Q         ; Writes value at Address 0o000001 to Reg. L
- 000D 3A0200                    LDA         000002Q         ; Writes value at Address 0o000002 to Reg. A
- 0010 85                        ADD         L               ; Adds Reg. A and L, answer placed into Reg. A
- 0011 320000                    STA         000000Q         ; Copies Register A to Address 0o000000
- 0014 76                        HLT                         ; Halts the 8080
- 0015                           END                         ; End of Assembly Instruction
+ 0005                           ORG         000005Q         ; Sets 8080's Program Counter to 0o000010
+ 0005 C31200                    JMP         000022Q         ; Jump to Halt
+ 0008 2A0100                    LHLD        000001Q         ; Writes value at Address 0o000001 to Reg. L
+ 000B 3A0200                    LDA         000002Q         ; Writes value at Address 0o000002 to Reg. A
+ 000E 85                        ADD         L               ; Adds Reg. A and L, answer placed into Reg. A
+ 000F 320000                    STA         000000Q         ; Copies Register A to Address 0o000000
+ 0012 76                        HLT                         ; Halts the 8080
+ 0013                           END                         ; End of Assembly Instruction
