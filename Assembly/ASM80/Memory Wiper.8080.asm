@@ -21,7 +21,7 @@
 ;                 alternating ones and zeros, and custom value.
 ;
 ;VARIABLE|      |MNEMONIC   |OPERAND        |COMMENT(S)
-  REGVARI:      EQU         01FFH           ; Global variable, indicates which register to write the memory pattern with at memory address 01FF
+   REGVAR:      EQU         01FFH           ; Global variable, indicates which register to write the memory pattern with at memory address 01FF
                 MVI         B,0011H         ; Writes the value 0055 [01010101, base-2] to register B
                 MVI         C,00AAH         ; Writes the value 00AA [10101010, base-2] to register C
                 MVI         D,0000H         ; Writes the value 0000 [00000000, base-2] to register D
