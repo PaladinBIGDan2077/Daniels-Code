@@ -7,7 +7,7 @@
                 ;   Location: McLean, Virginia
                 ;   Company: The Lomis Company of Virginia, R&D
                 ;
-                ;   Last Successful Compile: 3:24PM 10/16/20222
+                ;   Last Successful Compile: 5:21PM 10/16/20222
                 ;
                 ;   Programming Language: Assembly
                 ;   Instruction Code Language: ASM80
@@ -25,17 +25,17 @@
                 ;
                 ;       Mathematical Formula: A + B = C
                 ;
-                ;       Input Memory Address  A, B: 0c000001, 0c000002
+                ;       Input Memory Address  A, B: 0c000001, 0c000004
                 ;       Output Memory Address C: 0c000000   
                 ;
                 ;VARIABLE|      |MNEMONIC   |OPERAND        |COMMENT(S)
                 ;   OUT-C:      EQU         000000Q         | OUTPUT C - Result from Register A is outputted
                 ;    IN-A:      EQU         000001Q         | INPUT A - First word (binary/decimal)
-                ;    IN-B:      EQU         000002Q         | INPUT B - Second word (binary/decimal)
+                ;    IN-B:      EQU         000004Q         | INPUT B - Second word (binary/decimal)
  0005                           ORG         000005Q         ; Sets 8080's Program Counter to 0o000010
- 0005 C31200                    JMP         000022Q         ; Jump to Halt
+ 0005 C30800                    JMP         000010Q         ; Jump to Adder routine
  0008 2A0100                    LHLD        000001Q         ; Writes value at Address 0o000001 to Reg. L
- 000B 3A0200                    LDA         000002Q         ; Writes value at Address 0o000002 to Reg. A
+ 000B 3A0400                    LDA         000004Q         ; Writes value at Address 0o000004 to Reg. A
  000E 85                        ADD         L               ; Adds Reg. A and L, answer placed into Reg. A
  000F 320000                    STA         000000Q         ; Copies Register A to Address 0o000000
  0012 76                        HLT                         ; Halts the 8080

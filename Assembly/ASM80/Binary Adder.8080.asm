@@ -23,17 +23,17 @@
 ;
 ;       Mathematical Formula: A + B = C
 ;
-;       Input Memory Address  A, B: 0c000001, 0c000002
+;       Input Memory Address  A, B: 0c000001, 0c000004
 ;       Output Memory Address C: 0c000000   
 ;
 ;VARIABLE|      |MNEMONIC   |OPERAND        |COMMENT(S)
 ;   OUT-C:      EQU         000000Q         | OUTPUT C - Result from Register A is outputted
 ;    IN-A:      EQU         000001Q         | INPUT A - First word (binary/decimal)
-;    IN-B:      EQU         000002Q         | INPUT B - Second word (binary/decimal)
+;    IN-B:      EQU         000004Q         | INPUT B - Second word (binary/decimal)
                 ORG         000005Q         ; Sets 8080's Program Counter to 0o000010
-                JMP         000022Q         ; Jump to Halt
+                JMP         000010Q         ; Jump to Adder routine
                 LHLD        000001Q         ; Writes value at Address 0o000001 to Reg. L
-                LDA         000002Q         ; Writes value at Address 0o000002 to Reg. A
+                LDA         000004Q         ; Writes value at Address 0o000004 to Reg. A
                 ADD         L               ; Adds Reg. A and L, answer placed into Reg. A
                 STA         000000Q         ; Copies Register A to Address 0o000000
                 HLT                         ; Halts the 8080
