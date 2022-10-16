@@ -19,7 +19,7 @@
 ;                an output, C. My first program written in Assembly. When HALT state is reached
 ;                after Full Reset, the operator will be able to see the result at Address 
 ;                0c000000. Makes use of Registers A (Accumulator) and L (Lower Memory Pointer). 
-;                After inputing A and B, run the program from Address 0c000010. Written in Octal.
+;                After inputting A and B, run the program from Address 0c000010. Written in Octal.
 ;
 ;       Mathematical Formula: A + B = C
 ;
