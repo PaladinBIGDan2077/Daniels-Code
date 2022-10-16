@@ -10,7 +10,7 @@
 ;   Programming Language: Assembly
 ;   Intruction Code Language: ASM80
 ;   Programming Syntax: CP/M Assembler Mnemonics (Intel-based)
-;   System Architecture: Intel 8080 Microprocessor
+;   System Processor: Intel 8080, i8080-based
 ;   Compiler: CP/M ASSEMBLER - VER 2.0
 ;
 ;   Target Comuter: Altair 8800
