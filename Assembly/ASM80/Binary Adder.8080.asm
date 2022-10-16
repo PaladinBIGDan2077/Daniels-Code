@@ -8,12 +8,12 @@
 ;   Last Date Successfully Compiled: 10/15/20222
 ;
 ;   Programming Language: Assembly
-;   Intruction Code Language: ASM80
+;   Instruction Code Language: ASM80
 ;   Programming Syntax: CP/M Assembler Mnemonics (Intel-based)
 ;   System Processor: Intel 8080, i8080-based
 ;   Compiler: CP/M ASSEMBLER - VER 2.0
 ;
-;   Target Comuter: Altair 8800
+;   Target Computer: Altair 8800
 ;
 ;   Description: A front panel program for adding two words (8-Bits each), A and B, yielding 
 ;                an output, C. My first program written in Assembly. Runs on any Intel 8080-based computer.
@@ -26,7 +26,7 @@
 ;       Output Memory Address C: 0x0104
 ;
 ;VARIABLE|      |MNEMONIC   |OPERAND        |COMMENT(S)
-;   OUT-C:      EQU         000000Q         | OUTPUT C - Result of Register A is outputed here (answer)
+;   OUT-C:      EQU         000000Q         | OUTPUT C - Result of Register A is outputted here (answer)
 ;    IN-A:      EQU         000001Q         | INPUT A - First word (binary/decimal)
 ;    IN-B:      EQU         000002Q         | INPUT B - Second word (binary/decimal)
                 ORG         000007Q         ; Sets the 8080's Program Counter to 0o000007. Programming will be entered from memory address 0o000007 onward
@@ -35,4 +35,4 @@
                 ADD         L               ; Performs binary/decimal addition of Register A and L, replacing its answer back into Register A
                 STA         000000Q         ; Copies Register A's contents and writes it to memory address 0o000000 (OUT-C)
                 HLT                         ; Halt the 8080
-                END                         ; End of Assembly Intruction
+                END                         ; End of Assembly Instruction
