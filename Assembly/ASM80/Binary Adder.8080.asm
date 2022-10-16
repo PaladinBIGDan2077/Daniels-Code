@@ -16,20 +16,22 @@
 ;   Target Computer: Altair 8800
 ;
 ;   Description: A front panel program for adding two words (8-Bits each), A and B, yielding 
-;                an output, C. My first program written in Assembly. On System Reset, the
-;                operator will be able to see the result at Memory Address 0c000000. Makes 
-;                use of Registers A (Accumulator) and L (Lower Memory Pointer).
+;                an output, C. My first program written in Assembly. When HALT state is reached
+;                after Full Reset, the operator will be able to see the result at Memory Address 
+;                0c000000. Makes use of Registers A (Accumulator) and L (Lower Memory Pointer). 
+;                After inputing A and B, run the program from Memory Address 0c000010.
 ;
 ;       Mathematical Formula: A + B = C
 ;
-;       Input Memory Address  A, B: 0c000001, 0c000002 > RUN > RESET > OUT
+;       Input Memory Address  A, B: 0c000001, 0c000002
 ;       Output Memory Address C: 0c000000   
 ;
 ;VARIABLE|      |MNEMONIC   |OPERAND        |COMMENT(S)
 ;   OUT-C:      EQU         000000Q         | OUTPUT C - Result from Register A is outputted
 ;    IN-A:      EQU         000001Q         | INPUT A - First word (binary/decimal)
 ;    IN-B:      EQU         000002Q         | INPUT B - Second word (binary/decimal)
-                ORG         000010Q         ; Sets 8080's Program Counter to 0o000010
+                ORG         000007Q         ; Sets 8080's Program Counter to 0o000010
+                JMP         000021Q         ; Jump to Halt
                 LHLD        000001Q         ; Writes value at memory address 0o000001 to Reg. L
                 LDA         000002Q         ; Writes value at memory address 0o000002 to Reg. A
                 ADD         L               ; Adds Reg. A and L, answer placed into Reg. A
