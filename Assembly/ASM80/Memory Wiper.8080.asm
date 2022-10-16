@@ -5,12 +5,12 @@
 ;   Location: McLean, Virginia
 ;   Company: The Lomis Company of Virginia, R&D
 ;
-;   Last Date Successfully Compiled: 10/15/2022
+;   Last Date Successfully Compiled: 10/16/20222
 ;
 ;   Programming Language: Assembly
 ;   Instruction Code Language: ASM80
-;   Programming Syntax: CP/M Assembler Mnemonics (Intel-based)
-;   System Processor: Intel 8080, i8080-based
+;   Programming Syntax: CP/M Assembler
+;   System Processor (Instruction Set): Intel 8080 (i8080)
 ;   Compiler: CP/M ASSEMBLER - VER 2.0
 ;
 ;   Target Computer: Altair 8800
