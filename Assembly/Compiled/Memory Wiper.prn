@@ -1,13 +1,38 @@
- 00FF                 ORG 00FFH
- 01FF =         REGV: EQU 01FFH
- 00FF 0611            MVI B,0011H
- 0101 0EAA            MVI C,00AAH
- 0103 1600            MVI D,0000H
- 0105 1EFF            MVI E,00FFH
- 0107 3A009F          LDA 9F00H
- 010A 21FE0F          LXI H,0FFEH
- 010D 34              INR M
- 010E C31000          JMP 0010H
- 0040                 ORG 0040H
- 0040 76              HLT
- 0041                 END 00FFH
+
+
+                ;
+                ;   Title: Memory Wiper (WIP)
+                ;   Developer: Daniel J. Lomis
+                ;   Date Written: October 13, 2022
+                ;   Location: McLean, Virginia
+                ;   Company: The Lomis Company of Virginia, R&D
+                ;
+                ;   Date Successfully Compiled on the Altair: 10/15/2022
+                ;
+                ;   Programming Language: Assembly
+                ;   Intruction Code Language: ASM80
+                ;   Programming Syntax: INTEL MNEUMONICS
+                ;   System Architecture: Intel 8080
+                ;   Compiler: CP/M ASSEMBLER - VER 2.0
+                ;
+                ;   Target Computer: Altair 8800
+                ;
+                ;   Description:  A memory eraser program. It essentially clears the entire system of
+                ;                 memory. It will perform either one or all of the erasures, as defined,
+                ;                 upto 16 times. Supports writing zeros, ones, alternating zeros and ones,
+                ;                 alternating ones and zeros, and custom value.
+                ;
+                ;|LABEL     |MNEMONIC   |OPERAND    |COMMENTS
+ 00FF                       ORG         00FFH       ; Sets the CPU's program counter to 00FF. Programming will be entere
+ 01FF =         REGVARI:    EQU         01FFH       ; Global variable, indicates which register to write the memory patt
+ 00FF 0611                  MVI         B,0011H     ; Writes the value 0055 [01010101, base-2] to register B
+ 0101 0EAA                  MVI         C,00AAH     ; Writes the value 00AA [10101010, base-2] to register C
+ 0103 1600                  MVI         D,0000H     ; Writes the value 0000 [00000000, base-2] to register D
+ 0105 1EFF                  MVI         E,00FFH     ; Writes the value 00FF [11111111, base-2] to register E
+ 0107 3A000F                LDA         0F00H       ; Writes the value contained at at memory address 0F00 to register A
+ 010A 210000                LXI         H,0000H     ; Writes the value 0000 [0000000000000000, base-2] to register pair 
+ 010D 34                    INR         M           ; Increment the H-L register by 1, forcing the pair to point at the 
+ 010E C31000                JMP         0010H       ; Jumps the program counter to memory address 0010.
+ 0040                       ORG         0040H       ; Sets the CPU's program counter to 40. Programming will be entered 
+ 0040 76                    HLT                     ; Halt the CPU
+ 0041                       END                     ; End of Assembly Intruction

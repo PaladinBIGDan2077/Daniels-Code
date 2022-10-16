@@ -1,0 +1,37 @@
+
+
+                ;
+                ;   Title: Simple 8-Bit Binary Adder
+                ;   Developer: Daniel J. Lomis
+                ;   Date Written: October 6, 2022
+                ;   Location: McLean, Virginia
+                ;   Company: The Lomis Company of Virginia, R&D
+                ;
+                ;   Date Successfully Compiled on the Altair:
+                ;
+                ;   Programming Language: Assembly
+                ;   Intruction Code Language: ASM80
+                ;   Programming Syntax: INTEL MNEUMONICS
+                ;   System Architecture: Intel 8080
+                ;   Compiler: CP/M ASSEMBLER - VER 2.0
+                ;
+                ;   Target Comuter: Altair 8800
+                ;
+                ;   Description: A front panel program for adding two 8-Bit words, A and B, yielding 
+                ;                an output, C. My first program written in Assembly. Runs on any Intel 8080-based comput
+                ;
+                ;       Mathematical Formula: A + B = C
+                ;
+                ;       Input Memory Address  A, B: 0x0100, 0x0102
+                ;       Output Memory Address C: 0x0104
+                ;
+                ;|LABEL     |MNEMONIC   |OPERAND    |COMMENTS
+ 00FF                       ORG         00FFH       ;  Sets the CPU's program counter to 0. Programming will be entered 
+ 00FF 2A0001                LHLD        0100H	    ;  Writes the value located at memory address 0x0100 to register L
+ 0102 3A0201    	        LDA         0102H       ;  Writes the value located at memory address 0x0101 to register A
+ 0105 85                    ADD         L           ;  Performs binary or decimal addition of register A and L. Writes t
+ 0106 320401                STA         0104H       ;  Copies the contents of register A and writes it to memory address
+ 0109 C31000                JMP         0010H       ;  Jumps the program counter to memory address 0x0010.
+ 0040                       ORG         0040H       ;  Sets the CPU's program counter to 40. Programming will be entered
+ 0040 76                    HLT                     ;  halt the CPU
+ 0041                       END                     ;  End of Assembly Intruction
