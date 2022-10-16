@@ -1,4 +1,4 @@
-;
+;                                                                                                       <
 ;   Title: Memory Wiper (WIP)
 ;   Developer: Daniel J. Lomis
 ;   Date Written: October 13, 2022
