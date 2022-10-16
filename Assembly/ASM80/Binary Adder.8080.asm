@@ -17,9 +17,9 @@
 ;
 ;   Description: A front panel program for adding two words (8-Bits each), A and B, yielding 
 ;                an output, C. My first program written in Assembly. When HALT state is reached
-;                after Full Reset, the operator will be able to see the result at Memory Address 
+;                after Full Reset, the operator will be able to see the result at Address 
 ;                0c000000. Makes use of Registers A (Accumulator) and L (Lower Memory Pointer). 
-;                After inputing A and B, run the program from Memory Address 0c000010.
+;                After inputing A and B, run the program from Address 0c000010.
 ;
 ;       Mathematical Formula: A + B = C
 ;
@@ -32,9 +32,9 @@
 ;    IN-B:      EQU         000002Q         | INPUT B - Second word (binary/decimal)
                 ORG         000007Q         ; Sets 8080's Program Counter to 0o000010
                 JMP         000021Q         ; Jump to Halt
-                LHLD        000001Q         ; Writes value at memory address 0o000001 to Reg. L
-                LDA         000002Q         ; Writes value at memory address 0o000002 to Reg. A
+                LHLD        000001Q         ; Writes value at Address 0o000001 to Reg. L
+                LDA         000002Q         ; Writes value at Address 0o000002 to Reg. A
                 ADD         L               ; Adds Reg. A and L, answer placed into Reg. A
-                STA         000000Q         ; Copies Register A to memory address 0o000000
+                STA         000000Q         ; Copies Register A to Address 0o000000
                 HLT                         ; Halts the 8080
                 END                         ; End of Assembly Instruction
