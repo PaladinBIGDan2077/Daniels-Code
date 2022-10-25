@@ -1,7 +1,7 @@
 ;                                                                                                       
 ;   Title: Memory Wiper (WIP)
 ;   Developer: Daniel J. Lomis
-;   Date Written: October 13, 2022
+;   Date Written: October 24, 2022
 ;   Location: McLean, Virginia
 ;   Company: The Lomis Company of Virginia, R&D
 ;
@@ -21,8 +21,8 @@
 ;                 alternating ones and zeros, and custom value.
 ;
 ;  VARIABLE|    |MNEMONIC   |OPERAND        |COMMENT(S)
-     REGVAR:    EQU         0000H           ; Global Var, indicates where to write Register val.
-                ORG         FFFFH           ;
+     REGVAR:    DS          0000H           ; Global Var, indicates where to write Register val.
+                ORG         0FFFFH          ;
                 STC                         ;
                 ORG         0003H           ; Sets the CPU's program counter to 1       
                 MVI         B,0011H         ; Writes value 0055 [01010101, base-2] to Register B
@@ -33,8 +33,10 @@
                 MOV         A,REGVAR        ;
                 JMP         WRITER          ; Jumps Program Counter to WRITER function.
                 HLT                         ; Halt the CPU
-                END                         ; End of Assembly Instruction
-    WRITER:                                 ;
+;
+      WRITER                                
                 MOV         M,A             ; Writes value at Address 0x0001 to Register A
                 INR         M               ; Increment the H-L register by 1, forcing the pair to point at the adjacent memory address
                 RC                          ; Jumps the program counter to memory address 0010.
+;
+                END                         ; End of Assembly Instruction
