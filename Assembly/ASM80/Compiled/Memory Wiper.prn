@@ -27,7 +27,7 @@
  FFFF                           ORG         0FFFFH          ;
  FFFF 37                        STC                         ;
  0003                           ORG         0003H           ; Sets the CPU's program counter to 1       
- 0003 0611                      MVI         B,0011H         ; Writes value 0055 [01010101, base-2] to Register B
+ 0003 0611                      MVI         B,0055H         ; Writes value 0055 [01010101, base-2] to Register B
  0005 0EAA                      MVI         C,00AAH         ; Writes value 00AA [10101010, base-2] to Register C
  0007 1600                      MVI         D,0000H         ; Writes value 0000 [00000000, base-2] to Register D
  0009 1EFF                      MVI         E,00FFH         ; Writes value 00FF [11111111, base-2] to Register E
@@ -37,8 +37,9 @@
  0012 76                        HLT                         ; Halt the CPU
                 ;
                       WRITER                                
- 0013 77                        MOV         M,A             ; Writes value at Address 0x0001 to Register A
+ 0013 77                        MOV         M   ,A             ; Writes value at Address 0x0001 to Register A
  0014 34                        INR         M               ; Increment the H-L register by 1, forcing the pair to point
  0015 D8                        RC                          ; Jumps the program counter to memory address 0010.
+                                JMP         WRITER
                 ;
  0016                           END                         ; End of Assembly Instruction
