@@ -36,7 +36,7 @@
 ;
       WRITER                                
                 MOV         M,A             ; Writes value at Address 0x0001 to Register A
-                INR         M               ; Increment the H-L register by 1, forcing the pair to point at the adjacent memory address
+                INR         M               ; Increment the H-L register by 1, forcing the pair to point at the adjacent memory addres                          s
                 RC                          ; Jumps the program counter to memory address 0010.
 ;
                 END                         ; End of Assembly Instruction
