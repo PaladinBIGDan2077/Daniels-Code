@@ -1,2 +1,3 @@
-# Assembly: Intel 4004
+# Assembly: Intel 8008
+
 Written with Retro Assembler.
