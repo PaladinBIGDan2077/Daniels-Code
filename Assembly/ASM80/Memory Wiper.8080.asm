@@ -42,7 +42,7 @@
 ;
       WRITER                                
                 MOV         M,A             ; Writes value at Address 0x0001 to Register A
-                INR         M               ; Increment the H-L register by 1, forcing the pair to point at the adjacent memory addres                          s
+                INR         M               ; Increment the H-L register by 1, forcing the pair to point at the adjacent memory address                          
                 RC                          ; Jumps the program counter to memory address 0010.
                 JMP         WRITER
 ;
