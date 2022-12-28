@@ -1,0 +1,21 @@
+{
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "retroasm_8080",
+        "markdown",
+        "latex",
+        "plaintext",
+        "python",
+        "Log"
+    ],
+    "spellright.parserByClass": {
+        "Log": {
+            "parser": "plain"
+        },
+        "retroasm_8080": {
+            "parser": "xml"
+        }
+    }
+}
