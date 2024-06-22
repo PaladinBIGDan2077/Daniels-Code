@@ -21,4 +21,4 @@ for i in range(8):
     print("#_____#")
     cheese()
     print("_______")
-    os.system("clear")
+    os.system("cls")
