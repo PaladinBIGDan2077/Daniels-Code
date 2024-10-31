@@ -1,4 +1,5 @@
-;                                                               <
+
+
 ;   Title: 8-Bit Binary Adder
 ;   Developer: Daniel J. Lomis
 ;   Date Written: October 15, 2022
