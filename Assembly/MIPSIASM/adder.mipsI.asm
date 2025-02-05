@@ -38,8 +38,8 @@
 														#	
 	.globl 		main									# Global directive assertion main
 	.globl 		halt									# Global directive assertion halt
-														#
-	.text												# Begin Code Section
+												        #
+	 .text												# Begin Code Section
 	 halt:
 	 			li				$v0, 10 				# Load system call for exit
 				syscall
