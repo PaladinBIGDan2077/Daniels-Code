@@ -24,7 +24,31 @@
 #                The program will then display the translated string and exit.
 #                The program also handles backspace characters and invalid input.
 #
-#               VARIABLE|       |MNEMONIC   	    |OPERAND    			            |COMMENT(S)
+#   Register Usage:
+#                $v0 - System call parameter
+#                $a0 - Argument for system calls (string addresses)
+#                $t0-$t8 - Temporary registers for character operations and comparisons
+#                $s0 - Input buffer address pointer
+#                $s1 - Output buffer address pointer
+#                $ra - Return address storage
+#                $sp - Stack pointer for function call preservation
+#
+#   Pseudo-code Description:
+#                1. Display input prompt
+#                2. Read user input into buffer
+#                3. Process backspace characters in input
+#                4. Validate input contains only alphabetic characters
+#                5. If input is "QUIT", display exit message and terminate
+#                6. Else convert to Pig Latin:
+#                   a. If word starts with vowel, append "way"
+#                   b. If word starts with consonant cluster:
+#                      i. Move cluster to end
+#                      ii. Append "ay"
+#                   c. If single consonant, move to end and append "ay"
+#                7. Display translated result
+#                8. Repeat until user enters "QUIT"
+#
+#               VARIABLE|       |MNEMONIC           |OPERAND                          |COMMENT(S)
                                 .globl              main
                                 .globl              process_backspace
                                 .globl              validate_input
