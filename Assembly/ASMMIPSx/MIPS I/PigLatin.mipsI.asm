@@ -1,5 +1,7 @@
 #   Title: Pig-Latin Translator Program
-#   Developer: Deepseek, Daniel J. Lomis
+#   Filename: myPigLatin.asm
+#   Version: 1.1
+#   Developer: DeepSeek AI, Daniel J. Lomis
 #   Date Written: March 5, 2025
 #   Location: McLean, Virginia
 #   Organization: Virginia Polytechnic Institute and State University, Bradley Department of Electrical and Computer Engineering
