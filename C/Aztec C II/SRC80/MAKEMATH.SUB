@@ -1,0 +1,51 @@
+cii sin.c
+as sin.asm
+era sin.asm
+cii tan.c
+as tan.asm
+era tan.asm
+cii asin.c
+as asin.asm
+era asin.asm
+cii atan.c
+as atan.asm
+era atan.asm
+cii sinh.c
+as sinh.asm
+era sinh.asm
+cii tanh.c
+as tanh.asm
+era tanh.asm
+cii pow.c
+as pow.asm
+era pow.asm
+cii sqrt.c
+as sqrt.asm
+era sqrt.asm
+cii log.c
+as log.asm
+era log.asm
+cii exp.c
+as exp.asm
+era exp.asm
+cii floor.c
+as floor.asm
+era floor.asm
+as frexp.asm
+era math.lib
+xsub
+libutil -o math.lib .
+sin.o
+tan.o
+asin.o
+atan.o
+sinh.o
+tanh.o
+pow.o
+sqrt.o
+log.o
+exp.o
+floor.o
+frexp.o
+.
+

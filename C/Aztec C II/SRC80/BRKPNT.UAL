@@ -1,0 +1,75 @@
+;
+;	ZSID Calling Function for AZTEC C II
+;
+;	Copyright (c) 1982 William C. Colley III
+;
+; I grant Manx Software Systems permission to incorporate these functions
+; into the AZTEC C library subject only to the condition that my copyright
+; notice remain in the source code.  WCC3.
+;
+; These functions allow AZTEC C II to make a call to either DDT, SID, or
+; ZSID and return to the C program.  You use them by calling the function
+; brkpnt() or tagpnt() wherever you want your breakpoint to be.  Once in the
+; debugger, you can look at memory or whatever.  This is particularly useful
+; if you use Microsoft's LINK-80 to get a SID-compatible symbol table with the
+; /Y option and feed the symbol table to the debugger.  To restart your C
+; program, use the debugger's G command.  For example:
+;
+;	A>zsid prog.com prog.sym		;program and symbols loaded
+;	[debugger signon messages]
+;	#g					;C program started up
+;	[C program output]
+;	*nnnn					;brkpnt() or tagpnt() function
+;	#x					;  called at address nnnn
+;	[displayed register set]		;registers and memory displayed
+;	#d.buf_,+8
+;	[displayed data]
+;	#g					;C program resumed
+;	[more C program output]
+;	A>					;C program ceased execution
+;
+; The functions in the package are:
+;
+;	brkpnt()			Call DDT, SID, or ZSID with registers
+;					as per executing C program and
+;					returning no particular value.
+;
+;	unsigned tagpnt(tag)		Call DDT, SID, or ZSID loading tag
+;	unsigned tag;			into HL and returning HL as set by
+;					user when in debugger.
+;
+
+;******************************************************************************
+
+		CSEG
+		PUBLIC	brkpnt_, tagpnt_
+
+brkpnt_:	LXI	H, bp0		;Tell debugger where to return to.
+		PUSH	H
+
+		JMP	7 * 8		;Go to debugger.
+
+bp0:		RET			;When debugger comes back, return.
+
+;******************************************************************************
+
+tagpnt_:	LXI	H, tp0		;Tell debugger where to return to.
+		PUSH	H
+
+		LXI	H, 4		;Get tag to pass to user of debugger.
+		DAD	SP
+		MOV	A, M
+		INX	H
+		MOV	H, M
+		MOV	L, A
+
+		JMP	7 * 8		;Go to debugger.
+
+tp0:		MOV	A, H		;When debugger comes back, return
+		ORA	L		;  HL as per user's input.
+		RET
+
+;******************************************************************************
+
+		END
+

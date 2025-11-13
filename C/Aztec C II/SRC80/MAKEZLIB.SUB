@@ -1,0 +1,96 @@
+czii fseek.c
+as fseek.asm 
+era fseek.asm
+czii atol.c
+as ATOL.ASM
+ERA ATOL.ASM
+czii ATOI.C
+AS ATOI.ASM
+ERA ATOI.ASM
+czii ALLOC.C
+AS ALLOC.ASM
+ERA ALLOC.ASM
+czii FPRINTF.C
+AS FPRINTF.ASM
+ERA FPRINTF.ASM
+czii FORMAT.C
+AS FORMAT.ASM
+ERA FORMAT.ASM
+czii FOPEN.C
+AS FOPEN.ASM
+ERA FOPEN.ASM
+czii CROOT.C
+AS CROOT.ASM
+ERA CROOT.ASM
+AS CALLCPM.ASM
+AS SUPPZ80.ASM
+AS STRING.ASM
+AS TOUPPER.ASM
+AS CLOSALL.ASM
+AS LSUBS.ASM
+AS ATOF.ASM
+AS FLTLIB.ASM
+czii fscanf.c
+as fscanf.asm
+era fscanf.asm
+czii scan.c
+as scan.asm
+era scan.asm
+czii fread.c
+as fread.asm
+era fread.asm
+czii fgets.c
+as fgets.asm
+era fgets.asm
+czii ungetc.c
+as ungetc.asm
+era ungetc.asm
+czii getbuff.c
+as getbuff.asm
+era getbuff.asm
+czii setbuf.c
+as setbuf.asm
+era setbuf.asm
+czii open.c 
+as open.asm
+era open.asm
+czii read.c
+as read.asm
+era read.asm
+czii write.c
+as write.asm
+era write.asm
+czii lseek.c
+as lseek.asm
+era lseek.asm
+czii posit.c
+as posit.asm
+era posit.asm
+as blkio.asm
+czii rename.c
+as rename.asm
+era rename.asm
+as block.asm
+czii fputs.c
+as fputs.asm
+era fputs.asm
+czii getc.c
+as getc.asm
+era getc.asm
+czii putc.c
+as putc.asm
+era putc.asm
+czii unlink.c
+as unlink.asm
+era unlink.asm
+as fstub.asm
+XSUB
+LIBUTIL -O Z80LIBC.LIB .
+SUPPZ80.O FPRINTF.O FSCANF.O SCAN.O FLTLIB.O FOPEN.O
+FREAD.O FSEEK.O FGETS.O FPUTS.O GETC.O PUTC.O UNGETC.O
+GETBUFF.O SETBUF.O ALLOC.O FORMAT.O CALLCPM.O CROOT.O
+OPEN.O READ.O WRITE.O LSEEK.O POSIT.O BLKIO.O RENAME.O
+UNLINK.O ATOF.O ATOL.O ATOI.O BLOCK.O STRING.O TOUPPER.O 
+CLOSALL.O LSUBS.O FSTUB.O
+.
+

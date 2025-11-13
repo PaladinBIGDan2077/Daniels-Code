@@ -1,0 +1,96 @@
+cii -mo b:fseek.mac fseek.c
+b:m80 =b:fseek
+era b:fseek.mac
+cii -mo b:atol.mac atol.c
+b:m80 =b:atol
+era b:atol.mac
+cii -mo b:atoi.mac atoi.c
+b:m80 =b:atoi
+era b:atoi.mac
+cii -mo b:alloc.mac alloc.c
+b:m80 =b:alloc
+era b:alloc.mac
+cii -mo b:fprintf.mac fprintf.c
+b:m80 =b:fprintf
+era b:fprintf.mac
+cii -mo b:format.mac format.c
+b:m80 =b:format
+era b:format.mac
+cii -mo b:fopen.mac fopen.c
+b:m80 =b:fopen
+era b:fopen.mac
+cii -mo b:croot.mac croot.c
+b:m80 =b:croot
+era b:croot.mac
+b:m80 b:callcpm=callcpm.asm
+b:m80 b:supp8080=supp8080.asm
+b:m80 b:string=string.asm
+b:m80 b:toupper=toupper.asm
+b:m80 b:closall=closall.asm
+b:m80 b:lsubs=lsubs.asm
+b:m80 b:atof=atof.asm
+b:m80 b:fltlib=fltlib.asm
+cii -mo b:fscanf.mac fscanf.c
+b:m80 =b:fscanf
+era b:fscanf.mac
+cii -mo b:scan.mac scan.c
+b:m80 =b:scan
+era b:scan.mac
+cii -mo b:fread.mac fread.c
+b:m80 =b:fread
+era b:fread.mac
+cii -mo b:fgets.mac fgets.c
+b:m80 =b:fgets
+era b:fgets.mac
+cii -mo b:ungetc.mac ungetc.c
+b:m80 =b:ungetc
+era b:ungetc.mac
+cii -mo b:getbuff.mac getbuff.c
+b:m80 =b:getbuff
+era b:getbuff.mac
+cii -mo b:setbuf.mac setbuf.c
+b:m80 =b:setbuf
+era b:setbuf.mac
+cii -mo b:open.mac open.c
+b:m80 =b:open
+era b:open.mac
+cii -mo b:read.mac read.c
+b:m80 =b:read
+era b:read.mac
+cii -mo b:write.mac write.c
+b:m80 =b:write
+era b:write.mac
+cii -mo b:lseek.mac lseek.c
+b:m80 =b:lseek
+era b:lseek.mac
+cii -mo b:posit.mac posit.c
+b:m80 =b:posit
+era b:posit.mac
+b:m80 b:blkio=blkio.asm
+cii -mo b:rename.mac rename.c
+b:m80 =b:rename
+era b:rename.mac
+b:m80 b:block=block.asm
+cii -mo b:fputs.mac fputs.c
+b:m80 =b:fputs
+era b:fputs.mac
+cii -mo b:getc.mac getc.c
+b:m80 =b:getc
+era b:getc.mac
+cii -mo b:putc.mac putc.c
+b:m80 =b:putc
+era b:putc.mac
+cii -mo b:unlink.mac unlink.c
+b:m80 =b:unlink
+era b:unlink.mac
+b:m80 b:fstub=fstub.asm
+xsub
+b:lib
+b:softlibc=b:supp8080,b:fprintf,b:fscanf,b:scan,b:fltlib,b:fopen
+b:fread,b:fseek,b:fgets,b:fputs,b:getc,b:putc
+b:ungetc,b:getbuff,b:setbuf,b:alloc,b:format,b:callcpm
+b:croot,b:open,b:read,b:write,b:lseek,b:posit
+b:blkio,b:rename,b:unlink,b:atof,b:atol,b:atoi
+b:block,b:string,b:toupper
+b:closall,b:lsubs,b:fstub/e
+

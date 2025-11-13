@@ -1,0 +1,43 @@
+cii -mo b:sin.mac sin.c
+b:m80 =b:sin
+era b:sin.mac
+cii -mo b:tan.mac tan.c
+b:m80 =b:tan
+era b:tan.mac
+cii -mo b:asin.mac asin.c
+b:m80 =b:asin
+era b:asin.mac
+cii -mo b:atan.mac atan.c
+b:m80 =b:atan
+era b:atan.mac
+cii -mo b:sinh.mac sinh.c
+b:m80 =b:sinh
+era b:sinh.mac
+cii -mo b:tanh.mac tanh.c
+b:m80 =b:tanh
+era b:tanh.mac
+cii -mo b:pow.mac pow.c
+b:m80 =b:pow
+era b:pow.mac
+cii -mo b:sqrt.mac sqrt.c
+b:m80 =b:sqrt
+era b:sqrt.mac
+cii -mo b:log.mac log.c
+b:m80 =b:log
+era b:log.mac
+cii -mo b:random.mac random.c
+b:m80 =b:random
+era b:random.mac
+cii -mo b:exp.mac exp.c
+b:m80 =b:exp
+era b:exp.mac
+cii -mo b:floor.mac floor.c
+b:m80 =b:floor
+era b:floor.mac
+b:m80 b:frexp=a:frexp.asm
+era b:softmath.rel
+xsub
+b:lib
+b:softmath=b:sin,b:tan,b:asin,b:atan,b:sinh,b:tanh,b:pow
+b:sqrt,b:log,b:random,b:exp,b:floor,b:frexp/e
+

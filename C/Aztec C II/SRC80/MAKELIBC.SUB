@@ -1,0 +1,96 @@
+cii fseek.c
+as fseek.asm 
+era fseek.asm
+cii atol.c
+as ATOL.ASM
+ERA ATOL.ASM
+cii ATOI.C
+AS ATOI.ASM
+ERA ATOI.ASM
+cii ALLOC.C
+AS ALLOC.ASM
+ERA ALLOC.ASM
+cii FPRINTF.C
+AS FPRINTF.ASM
+ERA FPRINTF.ASM
+cii FORMAT.C
+AS FORMAT.ASM
+ERA FORMAT.ASM
+cii FOPEN.C
+AS FOPEN.ASM
+ERA FOPEN.ASM
+cii CROOT.C
+AS CROOT.ASM
+ERA CROOT.ASM
+AS CALLCPM.ASM
+AS SUPP8080.ASM
+AS STRING.ASM
+AS TOUPPER.ASM
+AS CLOSALL.ASM
+AS LSUBS.ASM
+AS ATOF.ASM
+AS FLTLIB.ASM
+cii fscanf.c
+as fscanf.asm
+era fscanf.asm
+cii scan.c
+as scan.asm
+era scan.asm
+cii fread.c
+as fread.asm
+era fread.asm
+cii fgets.c
+as fgets.asm
+era fgets.asm
+cii ungetc.c
+as ungetc.asm
+era ungetc.asm
+cii getbuff.c
+as getbuff.asm
+era getbuff.asm
+cii setbuf.c
+as setbuf.asm
+era setbuf.asm
+cii open.c 
+as open.asm
+era open.asm
+cii read.c
+as read.asm
+era read.asm
+cii write.c
+as write.asm
+era write.asm
+cii lseek.c
+as lseek.asm
+era lseek.asm
+cii posit.c
+as posit.asm
+era posit.asm
+as blkio.asm
+cii rename.c
+as rename.asm
+era rename.asm
+as block.asm
+cii fputs.c
+as fputs.asm
+era fputs.asm
+cii getc.c
+as getc.asm
+era getc.asm
+cii putc.c
+as putc.asm
+era putc.asm
+cii unlink.c
+as unlink.asm
+era unlink.asm
+as fstub.asm
+XSUB
+LIBUTIL -O LIBC.LIB .
+SUPP8080.O FPRINTF.O FSCANF.O SCAN.O FLTLIB.O FOPEN.O
+FREAD.O FSEEK.O FGETS.O FPUTS.O GETC.O PUTC.O UNGETC.O
+GETBUFF.O SETBUF.O ALLOC.O FORMAT.O CALLCPM.O CROOT.O
+OPEN.O READ.O WRITE.O LSEEK.O POSIT.O BLKIO.O RENAME.O
+UNLINK.O ATOF.O ATOL.O ATOI.O BLOCK.O STRING.O TOUPPER.O 
+CLOSALL.O LSUBS.O FSTUB.O
+.
+
