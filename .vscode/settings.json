@@ -17,5 +17,6 @@
         "retroasm_8080": {
             "parser": "xml"
         }
-    }
+    },
+    "C_Cpp.default.compilerPath": ""
 }
